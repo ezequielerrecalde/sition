@@ -100,4 +100,42 @@
 
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
-#====================================================================================================
+#====================================================================================================## user_problem_statement: Añadir al README instrucciones detalladas para instalar dependencias del backend y frontend, requisitos de Python, Node ≥ 20 y MongoDB, cómo configurar las variables de entorno y cómo ejecutar ambos servicios.
+## backend:
+##   - task: "Documentación de instalación y ejecución del backend"
+##     implemented: true
+##     working: true
+##     file: "README.md"
+##     stuck_count: 0
+##     priority: "high"
+##     needs_retesting: false
+##     status_history:
+##         -working: true
+##         -agent: "main"
+##         -comment: "Se añadieron instrucciones de instalación y ejecución del backend."
+## frontend:
+##   - task: "Documentación de instalación y ejecución del frontend"
+##     implemented: true
+##     working: true
+##     file: "README.md"
+##     stuck_count: 0
+##     priority: "high"
+##     needs_retesting: false
+##     status_history:
+##         -working: true
+##         -agent: "main"
+##         -comment: "Se añadieron instrucciones de instalación y ejecución del frontend."
+## metadata:
+##   created_by: "main_agent"
+##   version: "1.0"
+##   test_sequence: 0
+##   run_ui: false
+## test_plan:
+##   current_focus:
+##     - "Documentación de instalación y ejecución"
+##   stuck_tasks:
+##   test_all: false
+##   test_priority: "high_first"
+## agent_communication:
+##   -agent: "main"
+##   -message: "Instrucciones de instalación añadidas al README; no se necesitan pruebas."
