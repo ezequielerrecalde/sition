@@ -99,5 +99,51 @@
 
 
 #====================================================================================================
-# Testing Data - Main Agent and testing sub agent both should log testing data below this section
-#====================================================================================================
+# Testing Data - Main Agent and testing sub agent both should log testing data below this section#====================================================================================================
+user_problem_statement: "Incluir un archivo de licencia y añadir pruebas iniciales"
+backend:
+  - task: "Health endpoint test"
+    implemented: true
+    working: true
+    file: "tests/test_backend.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added basic health check test"
+      - working: true
+        agent: "main"
+        comment: "Configured backend to run on port 8001"
+frontend:
+  - task: "Render login page"
+    implemented: true
+    working: true
+    file: "frontend/src/App.test.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: true
+        agent: "main"
+        comment: "Added simple render test"
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 2
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "Health endpoint test"
+    - "Render login page"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "main"
+    message: "Added tests and LICENSE file"
+  - agent: "main"
+    message: "Configured backend to run on port 8001"
