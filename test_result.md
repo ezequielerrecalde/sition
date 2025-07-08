@@ -99,6 +99,9 @@
 
 
 #====================================================================================================
+
+# Testing Data - Main Agent and testing sub agent both should log testing data below this section#====================================================================================================
+
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 
 #====================================================================================================## user_problem_statement: Añadir al README instrucciones detalladas para instalar dependencias del backend y frontend, requisitos de Python, Node ≥ 20 y MongoDB, cómo configurar las variables de entorno y cómo ejecutar ambos servicios.
@@ -142,6 +145,7 @@
 ##   -message: "Instrucciones de instalación añadidas al README; no se necesitan pruebas."
 
 #====================================================================================================
+
 user_problem_statement: "Incluir un archivo de licencia y añadir pruebas iniciales"
 backend:
   - task: "Health endpoint test"
@@ -155,6 +159,11 @@ backend:
       - working: true
         agent: "main"
         comment: "Added basic health check test"
+
+      - working: true
+        agent: "main"
+        comment: "Configured backend to run on port 8001"
+
 frontend:
   - task: "Render login page"
     implemented: true
@@ -170,7 +179,11 @@ frontend:
 metadata:
   created_by: "main_agent"
   version: "1.0"
+
+  test_sequence: 2
+
   test_sequence: 1
+
   run_ui: false
 
 test_plan:
@@ -184,4 +197,7 @@ test_plan:
 agent_communication:
   - agent: "main"
     message: "Added tests and LICENSE file"
+
+  - agent: "main"
+    message: "Configured backend to run on port 8001"
 

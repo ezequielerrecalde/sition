@@ -12,6 +12,7 @@ import jwt
 import logging
 from pathlib import Path
 from dotenv import load_dotenv
+import uvicorn
 
 # Load environment variables
 ROOT_DIR = Path(__file__).parent
@@ -433,5 +434,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 @app.on_event("shutdown")
-async def shutdown_db_client():
-    client.close()
+async def shutdown_db_client():    client.close()
+
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8001))
+    uvicorn.run(app, host="0.0.0.0", port=port)

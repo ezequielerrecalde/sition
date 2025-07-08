@@ -1,3 +1,17 @@
+
+# Here are your Instructions
+
+## Development
+
+Run the FastAPI backend:
+
+```bash
+cd backend
+python server.py
+```
+
+The server reads the `PORT` environment variable and defaults to **8001**.
+
 # Sition Project Setup
 
 This repository contains a FastAPI backend and a React frontend. Follow the steps below to install the required dependencies and run both services locally.
